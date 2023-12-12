@@ -1,0 +1,307 @@
+
+@font-face {
+    font-family: "League Bold";
+src: url("/assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf") format("opentype");
+font-weight: 700;
+font-style: normal;
+font-display: auto;
+font-display: swap;
+}
+
+@font-face {
+    font-family: "League";
+src: url("/assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf") format("opentype");
+font-weight: 500;
+font-style: normal;
+font-display: auto;
+font-display: swap;
+}
+
+@font-face {
+    font-family: "League Light";
+src: url("/assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf") format("opentype");
+font-weight: 400;
+font-style: normal;
+font-display: auto;
+font-display: swap;
+}
+
+
+
+
+
+:root {
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+--animation-smooth: 0.7s cubic-bezier(0.5, 0.5, 0, 1);
+--border-radius: 0.5em;
+    --container-padding: 11vw;
+     --section-padding-medium: min(6vw, 6em);
+}
+
+
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+li,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'League', sans-serif;
+    color: var();
+    line-height: 1.1;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+background-color: var(--White);
+}
+
+html,
+body {
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+
+}
+
+
+canvas,
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+svg {
+    max-width: none;
+    height: auto;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul,
+ol,
+span,
+strong,
+em {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+h1 {
+     font-family: 'League Bold', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: clamp(2.56rem, 4vw, 4.6rem);
+    line-height: 0.9;
+    color: var(--Very-Dark-Magenta);
+}
+
+
+
+h5 {
+    font-family: 'League bold', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1.1;
+    color: var(--Very-Dark-Magenta);
+}
+
+p {
+    font-family: 'League Light', sans-serif;
+    font-style: normal;
+    font-family: 400;
+    color: var(--Dark-Grayish-Magenta);
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    line-height: 1.6;
+    
+}
+
+
+
+
+/*-------------------------format--------------------------*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.flex-col {
+    display: block;
+    width: 100%;
+    order: 2;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+img.overlay {
+    object-fit: cover;
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+}
+
+@media screen and (max-width: 720px){
+    .container {
+    padding-left: 7vw ;
+    padding-right: 7vw;
+}
+.section {
+    position: relative;
+    padding-top: 11vw ;
+    padding-bottom: 11vw;
+}
+}
+
+
+
+.btn-row {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    position: relative;
+    border: 0;
+    outline: 0;
+}
+
+
+.btn .btn-click {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    height: 55px;
+    width:  55px;
+    background-color: var(--dark-grey);
+    border-radius: 50%;
+    overflow: hidden; /* Ensure the pseudo-element doesn't exceed the button bounds */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: var(--animation-smooth);
+}
+
+.btn.secondary .btn-click {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+   width: 100%;
+   height: 100%;
+   padding: 0.7rem;
+    background-color: var(--primary-color);
+    border-radius: calc(var(--border-radius) * 3);
+    overflow: hidden; /* Ensure the pseudo-element doesn't exceed the button bounds */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+      transition: var(--animation-smooth);
+}
+
+
+
+.btn .btn-text {
+   position: relative;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.btn.secondary .btn-text span {
+   color: var(--color-light);
+   text-transform: uppercase;
+   font-family: 'overpass', sans-serif;
+   font-size: 1rem;
+}
+
+.btn .btn-text span {
+     padding-top: 3px;
+     color: var(--light-grey);
+    font-family: 'overpass', sans-serif;
+    font-size: 1rem;
+}
+
+.btn .btn-click:hover {
+     transition: var(--animation-smooth);
+     background-color: var(--light-grey);
+}
+.btn .btn-click:hover .btn-text span {
+   color: var(--color-light);
+}
+
+
+.secondary .btn-click:hover{
+    transition: var(--animation-smooth);
+   background-color: var(--color-light);
+    
+}
+
+
+.secondary .btn-click:hover .btn-text span {
+    color: var(--primary-color); /* Color change on hover for text */
+}
+
+
+.btn .btn-click.active, .btn .btn-click:active {
+    background-color: var(--primary-color); /* Or any color you prefer */
+    color: white;
+}
+
+/* This is to ensure the span inside the button also changes color */
+.btn .btn-click.active .btn-text span, .btn .btn-click:active .btn-text span {
+    color: white;
+}

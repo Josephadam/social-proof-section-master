@@ -1,0 +1,217 @@
+main {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.social {
+    height: 100%;
+}
+
+.bg-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 50%;
+}
+
+
+
+
+.social .row:first-child {
+      display: flex;
+    align-items: center;
+   justify-content: space-between;
+    width: 100%; /* Ensure this is full width */
+}
+
+.bg-right {
+     bottom: 0;
+    right: 0;
+    position: absolute;
+    background-image: url('/assets/images/bg-pattern-bottom-desktop.svg');
+    background-size: contain; /* or '50%' or any other value */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 100%; /* or the width you desire */
+    height: 80%; /* or the height you desire */
+}
+
+
+
+
+.social .first {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     width: 38%;
+     gap: 1rem;
+}
+
+.social .second {
+     display: flex;
+     flex-direction: column;
+     width: 45%;
+      gap: 1rem;
+      align-items: flex-end; /* This aligns the child elements (ratings) to the right */
+}
+
+.social .rating {
+     display: flex;
+    align-items: center;
+      width: 420px;
+     background-color: var( --Light-Grayish-Magenta);
+     padding: 1.2rem 1.9rem;
+     border-radius: var(--border-radius);
+     gap: 1.8rem;
+}
+
+.social .rating .stars {
+     display: flex;
+     gap: 0.2rem;
+}
+
+.social .rating .stars img{
+     width: 15px;
+}
+
+.social .rating:nth-of-type(2) {
+    margin-right: 2.5rem;
+}
+
+.social .rating:nth-of-type(1) {
+    margin-right: 4.5rem;
+}
+
+
+.social .row-split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--section-padding-medium) var(--gap);
+    --gap: calc(min(2vw, 2em) * 1);
+    --columns: 3;
+     padding-top: var(--section-padding-medium);
+}
+
+.social .row-split .flex-col {
+     width: calc((99.999% / var(--columns)) - (var(--gap) * ((var(--columns) - 1) / var(--columns))));
+	height: 100%;
+    background-color: var(--Very-Dark-Magenta);
+    padding: 1.8rem 2rem;
+     border-radius: var(--border-radius);
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+.social .row-split .flex-col:nth-of-type(2) {
+    margin-top: -1.5rem;
+}
+
+.social .row-split .flex-col:nth-of-type(1) {
+    margin-top: -2.5rem;
+}
+
+
+
+.social .content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1; 
+}
+
+.social .content h5, 
+.social .row-split .flex-col p {
+    color: var(--White);
+}
+
+.social .content h5:nth-of-type(2) {
+    color: var(--Soft-Pink);
+}
+
+.social .content .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.social .content img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 3em;
+    height: auto;
+    height: 3em;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        height: 100%;
+    }
+.social .row-split {
+    --columns: 2;
+    height: 100%;
+     gap:  var(--gap);
+    --gap: calc(var(3rem) / 1);
+}
+
+
+
+
+.social .first {
+    width: 100%;
+     text-align: center;
+}
+
+.social .second {
+    padding-top: var(--section-padding-medium);
+      width: 100%;
+}
+
+.second .rating {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.social .rating {
+    width: 100%;
+}
+
+
+.social .rating:nth-of-type(2) {
+    margin-right: 0;
+}
+
+.social .rating:nth-of-type(1) {
+    margin-right: 0;
+}
+
+
+.social .row-split .flex-col:nth-of-type(2) {
+    margin-top: 0;
+}
+
+.social .row-split .flex-col:nth-of-type(1) {
+    margin-top: 0;
+}
+
+
+}
+
+@media screen and (max-width: 720px){
+    .social .row-split {
+        padding-top: calc(var(--section-padding-medium) * 1.5);
+    --columns: 1;
+    height: 100%;
+     --gap: calc(min(2vw, 2em) * 2);
+}
+
+.social .second {
+    padding-top: calc(var(--section-padding-medium) * 1.5);
+}
+
+
+}
+
